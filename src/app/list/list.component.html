@@ -1,0 +1,40 @@
+<!-- List with sections -->
+<mat-list>
+  <div mat-subheader>Folders</div>
+  <mat-list-item *ngFor="let folder of folders">
+    <mat-icon matListItemIcon>folder</mat-icon>
+    <div matListItemTitle>{{folder.name}}</div>
+    <div matListItemLine>{{folder.updated | date}}</div>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+  <div mat-subheader>Notes</div>
+  <mat-list-item *ngFor="let note of notes">
+    <mat-icon matListItemIcon>note</mat-icon>
+    <div matListItemTitle>{{note.name}}</div>
+    <div matListItemLine>{{note.updated | date}}</div>
+  </mat-list-item>
+</mat-list>
+
+<!-- List with selection -->
+<mat-selection-list #shoes>
+  <mat-list-option *ngFor="let shoe of typesOfShoes">
+    {{shoe}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Options selected: {{shoes.selectedOptions.selected.length}}
+</p>
+
+<!-- List with single selection -->
+<mat-selection-list #shoes [multiple]="false">
+  <mat-list-option *ngFor="let shoe of typesOfShoes1" [value]="shoe">
+    {{shoe}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Option selected: {{shoes.selectedOptions.hasValue() ? shoes.selectedOptions.selected[0].value : 'None'}}
+</p>
+
+

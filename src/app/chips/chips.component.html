@@ -1,0 +1,16 @@
+<hr>
+<!-- Basic chips -->
+<mat-chip-listbox aria-label="Fish selection">
+  <mat-chip-option>One fish</mat-chip-option>
+  <mat-chip-option>Two fish</mat-chip-option>
+  <mat-chip-option color="accent" selected>Accent fish</mat-chip-option>
+  <mat-chip-option color="warn">Warn fish</mat-chip-option>
+</mat-chip-listbox>
+<hr>
+
+<!-- Stacked chips -->
+<mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Color selection">
+  <mat-chip-option *ngFor="let chip of availableColors" selected [color]="chip.color">
+    {{chip.name}}
+  </mat-chip-option>
+</mat-chip-listbox>
